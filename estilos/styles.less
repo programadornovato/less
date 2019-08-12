@@ -1,13 +1,11 @@
-@import "less/variables.less";
-@import "css/css.css";
-h1{
-    //color: @titulo;
-    .estilos-texto(#555,black,inherit,30px);
+.con{
+    height: 20px;
+    background-color: red;
 }
-.sub{
-    //color: @subtitulo;
-    .estilos-texto();
+.loop(@i) when (@i > 0){
+    .loop(@i - 1);
+    .con:nth-child( @{i} ){
+        width:@i*50 + 0px;
+    }    
 }
-.tex{
-    .estilos-texto(@texto);
-}
+.loop(8);
