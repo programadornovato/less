@@ -1,11 +1,15 @@
-.con{
-    height: 20px;
-    background-color: red;
+.estilo(@alto,@ancho,@fondo){
+    height: @alto;
+    width: @ancho;
+    background-color: @fondo;
 }
-.loop(@i) when (@i > 0){
-    .loop(@i - 1);
-    .con:nth-child( @{i} ){
-        width:@i*50 + 0px;
+@import "less/mejoras.less";
+.con{
+    .estilo(300px,300px,red);
+    .sub{
+        .estilo(200px,200px,blue);
+        .subsub{
+            .estilo(100px,100px,gray);
+        }        
     }    
 }
-.loop(8);
